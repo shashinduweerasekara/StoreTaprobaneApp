@@ -1,6 +1,6 @@
 #Store Taprobane - React Native E-Commerce Mobile App
 
 #Group B:
-Shashindu Weerasekara
-Hansaka Udana
-Eshan Ranjana
+Shashindu Weerasekara <br>
+Hansaka Udana <br>
+Eshan Ranjana <br>
