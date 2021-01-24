@@ -1,6 +1,6 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, Image, Text, View} from 'react-native';
-import Colors from '../assets/Colors';
+import config from '../assets/config';
 
 export default function Splash() {
   return (
@@ -9,8 +9,8 @@ export default function Splash() {
         <Image style={styles.splashImg} source={require('../imgs/logo.png')} />
       </View>
       <View style={styles.bottomText}>
-        <Text style={{fontSize: 21, color: Colors.P2}}>MADE IN</Text>
-        <Text style={{fontSize: 21, color: Colors.P2, fontWeight: 'bold'}}>
+        <Text style={{fontSize: 21, color: config.P2}}>MADE IN</Text>
+        <Text style={{fontSize: 21, color: config.P2, fontWeight: 'bold'}}>
           SRI LANKA
         </Text>
       </View>
@@ -24,13 +24,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: Colors.P1,
+    backgroundColor: config.P1,
     fontSize: 1,
   },
 
   splashImg: {
     resizeMode: 'contain',
-    width: 246,
+    height: 111,
   },
   bottomText: {
     position: 'absolute',
