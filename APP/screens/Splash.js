@@ -25,7 +25,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: config.P1,
-    fontSize: 1,
   },
 
   splashImg: {

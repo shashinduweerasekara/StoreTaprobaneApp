@@ -13,20 +13,7 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 export default function Login() {
   return (
     <SafeAreaView style={styles.loginContainer}>
-      <TouchableOpacity
-        style={{
-          position: 'absolute',
-          alignSelf: 'flex-end',
-          right: 15,
-        }}>
-        <FontAwesome5
-          name={'times'}
-          style={{
-            fontSize: 30,
-            color: config.P2,
-          }}
-        />
-      </TouchableOpacity>
+      <CloseBtn />
       <Image style={styles.loginImg} source={require('../imgs/logo.png')} />
       <Text style={styles.generalText}>Login to continue</Text>
       <TextInput placeholder="Email" style={styles.loginInput}></TextInput>

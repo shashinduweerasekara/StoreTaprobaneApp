@@ -10,27 +10,14 @@ import {
   StyleSheet,
 } from 'react-native';
 import config from '../assets/config';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import CloseBtn from '../commonComponents/CloseBtn';
 
 export default function SignUp() {
   return (
     <SafeAreaView>
       <ScrollView>
         <View style={styles.signInContainer}>
-          <TouchableOpacity
-            style={{
-              position: 'absolute',
-              alignSelf: 'flex-end',
-              right: 15,
-            }}>
-            <FontAwesome5
-              name={'times'}
-              style={{
-                fontSize: 30,
-                color: config.P2,
-              }}
-            />
-          </TouchableOpacity>
+          <CloseBtn />
           <Image
             style={styles.signInImg}
             source={require('../imgs/logo.png')}
@@ -39,14 +26,22 @@ export default function SignUp() {
           <View>
             <Text>First Name *</Text>
             <TextInput
+              autoCompleteType="name"
               style={styles.signInInput}
               placeholder="eg: Saman"></TextInput>
             <Text>Last Name *</Text>
             <TextInput
+              autoCompleteType="name"
               style={styles.signInInput}
               placeholder="eg: Edirimunee"></TextInput>
+            <Text>Mobile No. *</Text>
+            <TextInput
+              autoCompleteType="tel"
+              style={styles.signInInput}
+              placeholder="eg: +44123456789"></TextInput>
             <Text>Email *</Text>
             <TextInput
+              autoCompleteType="email"
               style={styles.signInInput}
               placeholder="eg: saman@secondinning.com"></TextInput>
             <Text>Password *</Text>

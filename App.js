@@ -1,6 +1,5 @@
-import {Component} from 'react';
 import React from 'react';
-import Splash from './APP/screens/Splash';
+import Splash from './APP/screens/Offers';
 
 const App: () => React$Node = () => {
   return <Splash />;
