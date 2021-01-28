@@ -1,62 +1,80 @@
 import React from 'react';
 import {
   SafeAreaView,
+  View,
   Text,
   Image,
   TextInput,
   StyleSheet,
   TouchableOpacity,
+  ScrollView,
 } from 'react-native';
 import config from '../assets/config';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import CloseBtn from '../commonComponents/CloseBtn';
+import WishlistBtn from '../commonComponents/WishlistBtn';
+import Logo from '../commonComponents/Logo';
 
 export default function Login() {
   return (
-    <SafeAreaView style={styles.loginContainer}>
-      <CloseBtn />
-      <Image style={styles.loginImg} source={require('../imgs/logo.png')} />
-      <Text style={styles.generalText}>Login to continue</Text>
-      <TextInput placeholder="Email" style={styles.loginInput}></TextInput>
-      <TextInput placeholder="Password" style={styles.loginInput}></TextInput>
-      <TouchableOpacity
-        onPress={() => console.log('tapped')}
-        style={styles.forgottenPassword}>
-        <Text style={styles.forgottenPasswordText}>Forgotten password?</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.loginBtn}
-        onPress={() => console.log('login')}>
-        <Text style={styles.loginBtnTxt}>LOGIN</Text>
-      </TouchableOpacity>
-      <Text style={styles.generalText}>OR</Text>
-      <TouchableOpacity
-        style={styles.loginGoogleBtn}
-        onPress={() => console.log('login with')}>
-        <Text style={styles.loginGoogleBtnTxt}>Login with</Text>
-        <Image
-          style={styles.loginGoogleBtnIcon}
-          source={require('../imgs/googleIcon.png')}
-        />
-      </TouchableOpacity>
-      <Text style={styles.generalText}>Don't have an account?</Text>
-      <TouchableOpacity onPress={() => console.log('Sign up now')}>
-        <Text style={styles.signUpLink}>Sign Up Now</Text>
-      </TouchableOpacity>
+    <SafeAreaView>
+      <ScrollView>
+        <View style={styles.loginContainer}>
+          <CloseBtn />
+          <View style={styles.loginImg}>
+            <Logo />
+          </View>
+          <View style={styles.loginForm}>
+            <Text style={styles.generalText}>Login to continue</Text>
+            <TextInput
+              placeholder="Email"
+              style={styles.loginInput}></TextInput>
+            <TextInput
+              placeholder="Password"
+              style={styles.loginInput}></TextInput>
+            <TouchableOpacity
+              onPress={() => console.log('tapped')}
+              style={styles.forgottenPassword}>
+              <Text style={styles.forgottenPasswordText}>
+                Forgotten password?
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.loginBtn}
+              onPress={() => console.log('login')}>
+              <Text style={styles.loginBtnTxt}>LOGIN</Text>
+            </TouchableOpacity>
+            <Text style={styles.generalText}>OR</Text>
+            <TouchableOpacity
+              style={styles.loginGoogleBtn}
+              onPress={() => console.log('login with')}>
+              <Text style={styles.loginGoogleBtnTxt}>Login with</Text>
+              <Image
+                style={styles.loginGoogleBtnIcon}
+                source={require('../imgs/googleIcon.png')}
+              />
+            </TouchableOpacity>
+          </View>
+
+          <Text style={styles.generalText}>Don't have an account?</Text>
+          <TouchableOpacity onPress={() => console.log('Sign up now')}>
+            <Text style={styles.signUpLink}>Sign Up Now</Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   loginContainer: {
-    alignItems: 'center',
+    flex: 1,
     height: '100%',
     backgroundColor: config.W,
   },
   loginImg: {
-    resizeMode: 'contain',
-    height: 80,
-    marginTop: 40,
-    marginBottom: 40,
+    alignSelf: 'center',
+    marginTop: 75,
+    marginBottom: 60,
   },
   generalText: {
     color: config.P2,
@@ -64,6 +82,12 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 20,
   },
+
+  loginForm: {
+    flex: 1,
+    alignItems: 'center',
+  },
+
   loginInput: {
     fontSize: 21,
     width: 300,

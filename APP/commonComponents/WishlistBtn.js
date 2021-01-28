@@ -1,21 +1,15 @@
 import React from 'react';
-import {
-  TouchableOpacity,
-  StyleSheet,
-  Pressable,
-  Text,
-  View,
-} from 'react-native';
+import {TouchableOpacity, StyleSheet, View} from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import config from '../assets/config';
 
-export default function CloseBtn() {
+export default function WishlistBtn() {
   return (
     <View>
       <TouchableOpacity
         style={styles.iconContainer}
-        onPress={() => console.log('close')}>
-        <FontAwesome5 name={'times'} style={styles.icon} />
+        onPress={() => console.log('WishlistBtn')}>
+        <FontAwesome5 name={'heart'} style={styles.icon} />
       </TouchableOpacity>
     </View>
   );
@@ -24,12 +18,12 @@ export default function CloseBtn() {
 const styles = StyleSheet.create({
   iconContainer: {
     position: 'absolute',
-    alignSelf: 'flex-end',
+    alignSelf: 'flex-start',
   },
   icon: {
     fontSize: 30,
     color: config.P2,
     marginTop: 5,
-    marginRight: 5,
+    marginLeft: 5,
   },
 });

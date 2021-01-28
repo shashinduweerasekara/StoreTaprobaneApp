@@ -7,11 +7,19 @@ export default function TopBar() {
   return (
     <View style={styles.topBar}>
       <TouchableOpacity>
-        <FontAwesome5 style={styles.topBarNavIcon} name={'bars'} />
+        <FontAwesome5
+          style={styles.topBarNavIcon}
+          name={'bars'}
+          onPress={() => console.log('side menu')}
+        />
       </TouchableOpacity>
       <Image style={styles.topBarIcon} source={require('../imgs/icon.png')} />
       <TouchableOpacity>
-        <FontAwesome5 style={styles.topBarNavIcon} name={'tags'} />
+        <FontAwesome5
+          style={styles.topBarNavIcon}
+          name={'tags'}
+          onPress={() => console.log('offers')}
+        />
       </TouchableOpacity>
     </View>
   );

@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import config from '../assets/config';
 import CloseBtn from '../commonComponents/CloseBtn';
+import Logo from '../commonComponents/Logo';
 
 export default function SignUp() {
   return (
@@ -18,10 +19,9 @@ export default function SignUp() {
       <ScrollView>
         <View style={styles.signInContainer}>
           <CloseBtn />
-          <Image
-            style={styles.signInImg}
-            source={require('../imgs/logo.png')}
-          />
+          <View style={styles.signImg}>
+            <Logo />
+          </View>
           <Text style={styles.generalText}>Create your account...</Text>
           <View>
             <Text>First Name *</Text>
@@ -84,10 +84,9 @@ const styles = StyleSheet.create({
     backgroundColor: config.W,
   },
   signInImg: {
-    resizeMode: 'contain',
-    height: 80,
-    marginTop: 30,
-    marginBottom: 10,
+    alignSelf: 'center',
+    marginTop: 45,
+    marginBottom: 25,
   },
   generalText: {
     color: config.P2,
