@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
     paddingBottom: 5,
   },
   topBarIcon: {
+    resizeMode: 'contain',
     width: 50,
     height: 50,
   },

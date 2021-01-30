@@ -11,7 +11,6 @@ import {
 } from 'react-native';
 import config from '../assets/config';
 import CloseBtn from '../commonComponents/CloseBtn';
-import WishlistBtn from '../commonComponents/WishlistBtn';
 import Logo from '../commonComponents/Logo';
 
 export default function Login() {
