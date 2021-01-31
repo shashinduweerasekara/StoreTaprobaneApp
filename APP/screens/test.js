@@ -12,37 +12,36 @@ import {
 import config from '../assets/config';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import TopBar from '../commonComponents/TopBar';
-
+/* 
+function Item({key, title, price, rate}) {
+  return (
+    <TouchableOpacity
+      style={styles.allProductItem}
+      onPress={() => console.log('product')}>
+      <View style={styles.hotProductImgContainer}>
+        <Image
+          source={require('../imgs/productImgs/P1.png')}
+          style={styles.hotProductImg}
+        />
+      </View>
+      <Text style={styles.hotProductTitle}>{title}</Text>
+      <View style={styles.hotProductPriceNRate}>
+        <Text style={styles.hotProductPrice}>$ {price}</Text>
+        <Text style={styles.hotProductRate}>
+          <FontAwesome5 name={'star'} style={styles.hotProductRateIcon} />{' '}
+          {rate}
+        </Text>
+      </View>
+    </TouchableOpacity>
+  );
+}
+ */
 export default function Home() {
   const [products, setProducts] = useState([
-    {
-      id: 'P1',
-      title: 'Product1',
-      price: 5.0,
-      rate: 4.9,
-      img: require('../imgs/productImgs/P1.png'),
-    },
-    {
-      id: 'P2',
-      title: 'Product2',
-      price: 4.0,
-      rate: 4.9,
-      img: require('../imgs/productImgs/P2.png'),
-    },
-    {
-      id: 'P3',
-      title: 'Product3',
-      price: 4.0,
-      rate: 4.9,
-      img: require('../imgs/productImgs/P3.png'),
-    },
-    {
-      id: 'P4',
-      title: 'Product4',
-      price: 4.0,
-      rate: 4.9,
-      img: require('../imgs/productImgs/P4.png'),
-    },
+    {id: 'P1', title: 'Product1', price: 5.0, rate: 4.9},
+    {id: 'P2', title: 'Product1', price: 4.0, rate: 4.9},
+    {id: 'P3', title: 'Product1', price: 4.0, rate: 4.9},
+    {id: 'P4', title: 'Product1', price: 4.0, rate: 4.9},
   ]);
 
   return (
@@ -156,27 +155,36 @@ export default function Home() {
         <View style={styles.allProducts}>
           <Text style={styles.hotProductsContainerTitle}>All PRODUCTS</Text>
           <View style={styles.allProductsList}>
-            {products.map((product) => (
+            {products.map((item) => (
               <TouchableOpacity
-                key={product.id}
                 style={styles.allProductItem}
                 onPress={() => console.log('product')}>
                 <View style={styles.hotProductImgContainer}>
-                  <Image source={product.img} style={styles.hotProductImg} />
+                  <Image
+                    source={require('../imgs/productImgs/P1.png')}
+                    style={styles.hotProductImg}
+                  />
                 </View>
-                <Text style={styles.hotProductTitle}>{product.title}</Text>
+                <Text style={styles.hotProductTitle}>{item.title}</Text>
                 <View style={styles.hotProductPriceNRate}>
-                  <Text style={styles.hotProductPrice}>$ {product.price}</Text>
+                  <Text style={styles.hotProductPrice}>$ {item.price}</Text>
                   <Text style={styles.hotProductRate}>
                     <FontAwesome5
                       name={'star'}
                       style={styles.hotProductRateIcon}
                     />{' '}
-                    {product.rate}
+                    {item.rate}
                   </Text>
                 </View>
               </TouchableOpacity>
             ))}
+            {/* <FlatList
+              numColumns={2}
+              data={products}
+              renderItem={({item}) => (
+                <Item title={item.title} price={item.price} rate={item.rate} />
+              )}
+            /> */}
           </View>
         </View>
       </ScrollView>
@@ -329,15 +337,9 @@ const styles = StyleSheet.create({
     padding: 10,
   },
 
-  allProductsList: {
-    flex: 1,
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-evenly',
-  },
+  allProductsList: {},
 
   allProductItem: {
-    width: 140,
     backgroundColor: config.S2,
     borderWidth: 1,
     borderColor: config.P2,

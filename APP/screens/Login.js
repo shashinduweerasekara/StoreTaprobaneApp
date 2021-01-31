@@ -16,8 +16,8 @@ import Logo from '../commonComponents/Logo';
 export default function Login() {
   return (
     <SafeAreaView>
-      <ScrollView>
-        <View style={styles.loginContainer}>
+      <ScrollView style={styles.loginContainer}>
+        <View>
           <CloseBtn />
           <View style={styles.loginImg}>
             <Logo />
@@ -53,11 +53,12 @@ export default function Login() {
               />
             </TouchableOpacity>
           </View>
-
-          <Text style={styles.generalText}>Don't have an account?</Text>
-          <TouchableOpacity onPress={() => console.log('Sign up now')}>
-            <Text style={styles.signUpLink}>Sign Up Now</Text>
-          </TouchableOpacity>
+          <View style={styles.bottom}>
+            <Text style={styles.generalText}>Don't have an account?</Text>
+            <TouchableOpacity onPress={() => console.log('Sign up now')}>
+              <Text style={styles.signUpLink}>Sign Up Now</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -66,7 +67,6 @@ export default function Login() {
 
 const styles = StyleSheet.create({
   loginContainer: {
-    flex: 1,
     height: '100%',
     backgroundColor: config.W,
   },
@@ -83,17 +83,19 @@ const styles = StyleSheet.create({
   },
 
   loginForm: {
-    flex: 1,
     alignItems: 'center',
   },
 
   loginInput: {
-    fontSize: 21,
-    width: 300,
-    height: 50,
+    color: config.P2,
+    fontSize: 16,
+    width: '90%',
+    height: 40,
     borderColor: config.P2,
     borderWidth: 1,
     borderRadius: config.BR,
+    paddingTop: 0,
+    paddingBottom: 0,
     paddingLeft: 10,
     marginBottom: 10,
   },
@@ -146,6 +148,10 @@ const styles = StyleSheet.create({
     height: 30,
     width: 30,
     marginLeft: 10,
+  },
+
+  bottom: {
+    alignItems: 'center',
   },
 
   signUpLink: {

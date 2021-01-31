@@ -16,62 +16,56 @@ import Logo from '../commonComponents/Logo';
 export default function SignUp() {
   return (
     <SafeAreaView>
-      <ScrollView>
-        <View style={styles.signInContainer}>
+      <ScrollView style={styles.signInContainer}>
+        <View>
           <CloseBtn />
-          <View style={styles.signImg}>
+          <View style={styles.signUpImg}>
             <Logo />
           </View>
-          <Text style={styles.generalText}>Create your account...</Text>
-          <View>
-            <Text>First Name *</Text>
+          <View style={styles.signUpForm}>
+            <Text style={styles.generalText}>Create your account...</Text>
             <TextInput
               autoCompleteType="name"
               style={styles.signInInput}
-              placeholder="eg: Saman"></TextInput>
-            <Text>Last Name *</Text>
+              placeholder="First Name"></TextInput>
             <TextInput
               autoCompleteType="name"
               style={styles.signInInput}
-              placeholder="eg: Edirimunee"></TextInput>
-            <Text>Mobile No. *</Text>
+              placeholder="Last Name"></TextInput>
             <TextInput
               autoCompleteType="tel"
               style={styles.signInInput}
-              placeholder="eg: +44123456789"></TextInput>
-            <Text>Email *</Text>
+              placeholder="Mobile No"></TextInput>
             <TextInput
               autoCompleteType="email"
               style={styles.signInInput}
-              placeholder="eg: saman@secondinning.com"></TextInput>
-            <Text>Password *</Text>
+              placeholder="Email Address"></TextInput>
             <TextInput
               style={styles.signInInput}
-              placeholder="eg: Login@123"></TextInput>
-            <Text>Confirm Password *</Text>
+              placeholder="Password"></TextInput>
             <TextInput
               style={styles.signInInput}
-              placeholder="eg: Login@123"></TextInput>
+              placeholder="Confirm Password"></TextInput>
+            <TouchableOpacity
+              style={styles.signInBtn}
+              onPress={() => console.log('sign up')}>
+              <Text style={styles.signInBtnTxt}>SIGN UP</Text>
+            </TouchableOpacity>
+            <Text style={styles.generalText}>OR</Text>
+            <TouchableOpacity
+              style={styles.signInGoogleBtn}
+              onPress={() => console.log('login with')}>
+              <Text style={styles.signInGoogleBtnTxt}>Sign up with</Text>
+              <Image
+                style={styles.signInGoogleBtnIcon}
+                source={require('../imgs/googleIcon.png')}
+              />
+            </TouchableOpacity>
+            <Text style={styles.generalText}>Already registered?</Text>
+            <TouchableOpacity onPress={() => console.log('Login Now')}>
+              <Text style={styles.loginLink}>Login Now</Text>
+            </TouchableOpacity>
           </View>
-          <TouchableOpacity
-            style={styles.signInBtn}
-            onPress={() => console.log('sign up')}>
-            <Text style={styles.signInBtnTxt}>SIGN UP</Text>
-          </TouchableOpacity>
-          <Text style={styles.generalText}>OR</Text>
-          <TouchableOpacity
-            style={styles.signInGoogleBtn}
-            onPress={() => console.log('login with')}>
-            <Text style={styles.signInGoogleBtnTxt}>Sign up with</Text>
-            <Image
-              style={styles.signInGoogleBtnIcon}
-              source={require('../imgs/googleIcon.png')}
-            />
-          </TouchableOpacity>
-          <Text style={styles.generalText}>Already registered?</Text>
-          <TouchableOpacity onPress={() => console.log('Login Now')}>
-            <Text style={styles.loginLink}>Login Now</Text>
-          </TouchableOpacity>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -80,10 +74,10 @@ export default function SignUp() {
 
 const styles = StyleSheet.create({
   signInContainer: {
-    alignItems: 'center',
+    height: '100%',
     backgroundColor: config.W,
   },
-  signInImg: {
+  signUpImg: {
     alignSelf: 'center',
     marginTop: 45,
     marginBottom: 25,
@@ -94,14 +88,21 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 10,
   },
+
+  signUpForm: {
+    alignItems: 'center',
+  },
+
   signInInput: {
-    fontSize: 21,
-    width: 300,
-    height: 50,
+    fontSize: 16,
+    width: '90%',
+    height: 40,
     borderColor: config.P2,
     borderWidth: 1,
     borderRadius: config.BR,
     paddingLeft: 10,
+    paddingTop: 0,
+    paddingBottom: 0,
     marginBottom: 10,
   },
 
