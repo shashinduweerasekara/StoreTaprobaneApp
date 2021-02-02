@@ -8,16 +8,23 @@ import {
   Image,
   TouchableOpacity,
   StyleSheet,
+  Button,
 } from 'react-native';
 import config from '../assets/config';
-import CloseBtn from '../commonComponents/CloseBtn';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Logo from '../commonComponents/Logo';
 
-export default function SignUp() {
+export default function SignUp({navigation}) {
   return (
     <ScrollView style={styles.signInContainer}>
       <View>
-        <CloseBtn />
+        <View>
+          <TouchableOpacity
+            style={styles.iconContainer}
+            onPress={() => navigation.navigate('Home')}>
+            <FontAwesome5 name={'times'} style={styles.icon} />
+          </TouchableOpacity>
+        </View>
         <View style={styles.signUpImg}>
           <Logo />
         </View>
@@ -61,7 +68,7 @@ export default function SignUp() {
             />
           </TouchableOpacity>
           <Text style={styles.generalText}>Already registered?</Text>
-          <TouchableOpacity onPress={() => console.log('Login Now')}>
+          <TouchableOpacity onPress={() => navigation.navigate('Login')}>
             <Text style={styles.loginLink}>Login Now</Text>
           </TouchableOpacity>
         </View>
@@ -150,5 +157,15 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
     marginTop: -10,
     marginBottom: 20,
+  },
+  iconContainer: {
+    position: 'absolute',
+    alignSelf: 'flex-end',
+  },
+  icon: {
+    fontSize: 30,
+    color: config.P2,
+    marginTop: 5,
+    marginRight: 5,
   },
 });

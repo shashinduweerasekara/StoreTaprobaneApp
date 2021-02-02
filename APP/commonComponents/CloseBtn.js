@@ -9,12 +9,12 @@ import {
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import config from '../assets/config';
 
-export default function CloseBtn() {
+export default function CloseBtn({navigation}) {
   return (
     <View>
       <TouchableOpacity
         style={styles.iconContainer}
-        onPress={() => console.log('close')}>
+        onPress={() => navigation.navigate('Home')}>
         <FontAwesome5 name={'times'} style={styles.icon} />
       </TouchableOpacity>
     </View>

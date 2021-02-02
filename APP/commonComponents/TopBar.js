@@ -3,7 +3,7 @@ import {View, TouchableOpacity, StyleSheet, Image} from 'react-native';
 import config from '../assets/config';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-export default function TopBar() {
+export default function TopBar({navigation}) {
   return (
     <View style={styles.topBar}>
       <TouchableOpacity>
@@ -18,7 +18,7 @@ export default function TopBar() {
         <FontAwesome5
           style={styles.topBarNavIcon}
           name={'tags'}
-          onPress={() => console.log('offers')}
+          onPress={() => navigation.navigate('Offers')}
         />
       </TouchableOpacity>
     </View>

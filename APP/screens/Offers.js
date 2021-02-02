@@ -10,7 +10,7 @@ import {
 import config from '../assets/config';
 import TopBar from '../commonComponents/TopBar';
 
-export default function Offers() {
+export default function Offers({navigation}) {
   return (
     <SafeAreaView style={styles.offerScreen}>
       <TopBar />
