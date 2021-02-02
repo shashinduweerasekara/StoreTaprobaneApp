@@ -15,53 +15,49 @@ import Logo from '../commonComponents/Logo';
 
 export default function Login() {
   return (
-    <SafeAreaView>
-      <ScrollView style={styles.loginContainer}>
-        <View>
-          <CloseBtn />
-          <View style={styles.loginImg}>
-            <Logo />
-          </View>
-          <View style={styles.loginForm}>
-            <Text style={styles.generalText}>Login to continue</Text>
-            <TextInput
-              placeholder="Email"
-              style={styles.loginInput}></TextInput>
-            <TextInput
-              placeholder="Password"
-              style={styles.loginInput}></TextInput>
-            <TouchableOpacity
-              onPress={() => console.log('tapped')}
-              style={styles.forgottenPassword}>
-              <Text style={styles.forgottenPasswordText}>
-                Forgotten password?
-              </Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.loginBtn}
-              onPress={() => console.log('login')}>
-              <Text style={styles.loginBtnTxt}>LOGIN</Text>
-            </TouchableOpacity>
-            <Text style={styles.generalText}>OR</Text>
-            <TouchableOpacity
-              style={styles.loginGoogleBtn}
-              onPress={() => console.log('login with')}>
-              <Text style={styles.loginGoogleBtnTxt}>Login with</Text>
-              <Image
-                style={styles.loginGoogleBtnIcon}
-                source={require('../imgs/googleIcon.png')}
-              />
-            </TouchableOpacity>
-          </View>
-          <View style={styles.bottom}>
-            <Text style={styles.generalText}>Don't have an account?</Text>
-            <TouchableOpacity onPress={() => console.log('Sign up now')}>
-              <Text style={styles.signUpLink}>Sign Up Now</Text>
-            </TouchableOpacity>
-          </View>
+    <ScrollView style={styles.loginContainer}>
+      <View>
+        <CloseBtn />
+        <View style={styles.loginImg}>
+          <Logo />
         </View>
-      </ScrollView>
-    </SafeAreaView>
+        <View style={styles.loginForm}>
+          <Text style={styles.generalText}>Login to continue</Text>
+          <TextInput placeholder="Email" style={styles.loginInput}></TextInput>
+          <TextInput
+            placeholder="Password"
+            style={styles.loginInput}></TextInput>
+          <TouchableOpacity
+            onPress={() => console.log('tapped')}
+            style={styles.forgottenPassword}>
+            <Text style={styles.forgottenPasswordText}>
+              Forgotten password?
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.loginBtn}
+            onPress={() => console.log('login')}>
+            <Text style={styles.loginBtnTxt}>LOGIN</Text>
+          </TouchableOpacity>
+          <Text style={styles.generalText}>OR</Text>
+          <TouchableOpacity
+            style={styles.loginGoogleBtn}
+            onPress={() => console.log('login with')}>
+            <Text style={styles.loginGoogleBtnTxt}>Login with</Text>
+            <Image
+              style={styles.loginGoogleBtnIcon}
+              source={require('../imgs/googleIcon.png')}
+            />
+          </TouchableOpacity>
+        </View>
+        <View style={styles.bottom}>
+          <Text style={styles.generalText}>Don't have an account?</Text>
+          <TouchableOpacity onPress={() => console.log('Sign up now')}>
+            <Text style={styles.signUpLink}>Sign Up Now</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </ScrollView>
   );
 }
 

@@ -3,8 +3,8 @@ import {View, Text} from 'react-native';
 
 export default function Cart() {
   return (
-    <View>
-      <Text></Text>
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <Text>I'm Cart</Text>
     </View>
   );
 }

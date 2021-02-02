@@ -15,60 +15,58 @@ import Logo from '../commonComponents/Logo';
 
 export default function SignUp() {
   return (
-    <SafeAreaView>
-      <ScrollView style={styles.signInContainer}>
-        <View>
-          <CloseBtn />
-          <View style={styles.signUpImg}>
-            <Logo />
-          </View>
-          <View style={styles.signUpForm}>
-            <Text style={styles.generalText}>Create your account...</Text>
-            <TextInput
-              autoCompleteType="name"
-              style={styles.signInInput}
-              placeholder="First Name"></TextInput>
-            <TextInput
-              autoCompleteType="name"
-              style={styles.signInInput}
-              placeholder="Last Name"></TextInput>
-            <TextInput
-              autoCompleteType="tel"
-              style={styles.signInInput}
-              placeholder="Mobile No"></TextInput>
-            <TextInput
-              autoCompleteType="email"
-              style={styles.signInInput}
-              placeholder="Email Address"></TextInput>
-            <TextInput
-              style={styles.signInInput}
-              placeholder="Password"></TextInput>
-            <TextInput
-              style={styles.signInInput}
-              placeholder="Confirm Password"></TextInput>
-            <TouchableOpacity
-              style={styles.signInBtn}
-              onPress={() => console.log('sign up')}>
-              <Text style={styles.signInBtnTxt}>SIGN UP</Text>
-            </TouchableOpacity>
-            <Text style={styles.generalText}>OR</Text>
-            <TouchableOpacity
-              style={styles.signInGoogleBtn}
-              onPress={() => console.log('login with')}>
-              <Text style={styles.signInGoogleBtnTxt}>Sign up with</Text>
-              <Image
-                style={styles.signInGoogleBtnIcon}
-                source={require('../imgs/googleIcon.png')}
-              />
-            </TouchableOpacity>
-            <Text style={styles.generalText}>Already registered?</Text>
-            <TouchableOpacity onPress={() => console.log('Login Now')}>
-              <Text style={styles.loginLink}>Login Now</Text>
-            </TouchableOpacity>
-          </View>
+    <ScrollView style={styles.signInContainer}>
+      <View>
+        <CloseBtn />
+        <View style={styles.signUpImg}>
+          <Logo />
         </View>
-      </ScrollView>
-    </SafeAreaView>
+        <View style={styles.signUpForm}>
+          <Text style={styles.generalText}>Create your account...</Text>
+          <TextInput
+            autoCompleteType="name"
+            style={styles.signInInput}
+            placeholder="First Name"></TextInput>
+          <TextInput
+            autoCompleteType="name"
+            style={styles.signInInput}
+            placeholder="Last Name"></TextInput>
+          <TextInput
+            autoCompleteType="tel"
+            style={styles.signInInput}
+            placeholder="Mobile No"></TextInput>
+          <TextInput
+            autoCompleteType="email"
+            style={styles.signInInput}
+            placeholder="Email Address"></TextInput>
+          <TextInput
+            style={styles.signInInput}
+            placeholder="Password"></TextInput>
+          <TextInput
+            style={styles.signInInput}
+            placeholder="Confirm Password"></TextInput>
+          <TouchableOpacity
+            style={styles.signInBtn}
+            onPress={() => console.log('sign up')}>
+            <Text style={styles.signInBtnTxt}>SIGN UP</Text>
+          </TouchableOpacity>
+          <Text style={styles.generalText}>OR</Text>
+          <TouchableOpacity
+            style={styles.signInGoogleBtn}
+            onPress={() => console.log('login with')}>
+            <Text style={styles.signInGoogleBtnTxt}>Sign up with</Text>
+            <Image
+              style={styles.signInGoogleBtnIcon}
+              source={require('../imgs/googleIcon.png')}
+            />
+          </TouchableOpacity>
+          <Text style={styles.generalText}>Already registered?</Text>
+          <TouchableOpacity onPress={() => console.log('Login Now')}>
+            <Text style={styles.loginLink}>Login Now</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </ScrollView>
   );
 }
 

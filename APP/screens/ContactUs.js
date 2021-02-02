@@ -46,7 +46,7 @@ export default function ContactUs() {
           <TouchableOpacity
             style={styles.sendBtn}
             onPress={() => console.log('login')}>
-            <Text style={styles.sendBtnTxt}>LOGIN</Text>
+            <Text style={styles.sendBtnTxt}>SEND</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
