@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "612833458315",
+    "project_id": "store-taprobane-app",
+    "storage_bucket": "store-taprobane-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612833458315:android:3051393c4483bb702ebc8e",
+        "android_client_info": {
+          "package_name": "com.storetaprobaneapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "612833458315-09jnme5sguskv10ahud7j12g1mljgsor.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.storetaprobaneapp",
+            "certificate_hash": "5d5fd4d5f037bbb8b48fa5a43b6c344e6e3c4e46"
+          }
+        },
+        {
+          "client_id": "612833458315-ao6uc2fmav67886fc51er6h0f6vja06f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-rH1gsasK3KsRbyGlavMuDggWXB8Aiz8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "612833458315-ao6uc2fmav67886fc51er6h0f6vja06f.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "612833458315-b1nmc591varhvgmorbolh53tteujqpkd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.store-taprobane-app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

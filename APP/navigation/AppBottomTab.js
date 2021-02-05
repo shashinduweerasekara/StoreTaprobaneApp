@@ -3,18 +3,18 @@ import {createMaterialBottomTabNavigator} from '@react-navigation/material-botto
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import config from '../assets/config';
 
-import Home from '../screens/Home';
-import Wishlist from '../screens/Wishlist';
-import Cart from '../screens/Cart';
-import Notifications from '../screens/Notifications';
-import Profile from '../screens/Profile';
+import AppStack from '../navigation/AppStack';
+import WishlistScreen from '../screens/WishlistScreen';
+import CartScreen from '../screens/CartScreen';
+import NotificationsScreen from '../screens/NotificationsScreen';
+import ProfileScreen from '../screens/ProfileScreen';
 
 const Tab = createMaterialBottomTabNavigator();
 
-function BottomBar() {
+export default function AppBottomTab() {
   return (
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName="HomeScreen"
       activeColor={config.P2}
       barStyle={{
         backgroundColor: config.P1,
@@ -23,8 +23,8 @@ function BottomBar() {
         borderRadius: config.BR,
       }}>
       <Tab.Screen
-        name="Home"
-        component={Home}
+        name="HomeScreen"
+        component={AppStack}
         options={{
           tabBarIcon: ({color}) => (
             <FontAwesome5 name="home" color={color} size={20} />
@@ -32,8 +32,8 @@ function BottomBar() {
         }}
       />
       <Tab.Screen
-        name="Wishlist"
-        component={Wishlist}
+        name="WishlistScreen"
+        component={WishlistScreen}
         options={{
           tabBarIcon: ({color}) => (
             <FontAwesome5 name="heart" color={color} size={20} />
@@ -41,30 +41,27 @@ function BottomBar() {
         }}
       />
       <Tab.Screen
-        name="Cart"
-        component={Cart}
+        name="CartScreen"
+        component={CartScreen}
         options={{
-          tabBarLabel: 'Cart',
           tabBarIcon: ({color}) => (
             <FontAwesome5 name="shopping-cart" color={color} size={20} />
           ),
         }}
       />
       <Tab.Screen
-        name="Notifications"
-        component={Notifications}
+        name="NotificationsScreen"
+        component={NotificationsScreen}
         options={{
-          tabBarLabel: 'Notifications',
           tabBarIcon: ({color}) => (
             <FontAwesome5 name="bell" color={color} size={20} />
           ),
         }}
       />
       <Tab.Screen
-        name="Profile"
-        component={Profile}
+        name="ProfileScreen"
+        component={ProfileScreen}
         options={{
-          tabBarLabel: 'Profile',
           tabBarIcon: ({color}) => (
             <FontAwesome5 name="user-circle" color={color} size={20} />
           ),
@@ -73,5 +70,3 @@ function BottomBar() {
     </Tab.Navigator>
   );
 }
-
-export default BottomBar;

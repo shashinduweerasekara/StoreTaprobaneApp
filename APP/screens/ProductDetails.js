@@ -7,44 +7,35 @@ import {
   SafeAreaView,
   ScrollView,
   Image,
+  StatusBar,
 } from 'react-native';
-import CloseBtn from '../commonComponents/CloseBtn';
-import WishlistBtn from '../commonComponents/WishlistBtn';
-import TopBar from '../commonComponents/TopBar';
 import config from '../assets/config';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-export default function ProductDetails() {
+export default function ProductDetails({route, navigation}) {
+  const {title, price, img, measure, unit, value, description} = route.params;
   return (
     <SafeAreaView style={styles.productViewScreen}>
-      <TopBar />
+      <StatusBar backgroundColor={config.P1} barStyle="dark-content" />
       <ScrollView style={styles.productViewContainer}>
-        <WishlistBtn />
-        <CloseBtn />
         <View style={styles.productViewContent}>
           <View style={styles.productImgContainer}>
-            <Image
-              source={require('../imgs/productImgs/P1.png')}
-              style={styles.productImg}
-            />
+            <Image source={img} style={styles.productImg} />
           </View>
           <View style={styles.productDetails}>
             <View style={styles.titleNprice}>
-              <Text style={styles.productTitle}>Black Pepper Powder</Text>
-              <Text style={styles.productPrice}>$ 4.00</Text>
+              <Text style={styles.productTitle}>{title}</Text>
+              <Text style={styles.productPrice}>$ {price}</Text>
             </View>
             <View style={styles.productDescriptionContainer}>
-              <Text style={styles.productDescription}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
-                laudantium maxime, architecto dolorem saepe rerum, magni
-                assumenda suscipit dolore consequuntur dolorum doloremque
-                praesentium, porro qui.
-              </Text>
+              <Text style={styles.productDescription}>{description}</Text>
             </View>
             <View>
               <View style={styles.productWnQRow}>
-                <Text style={styles.productWnQ}>Weight:</Text>
-                <Text style={styles.productWnQvalue}>100g</Text>
+                <Text style={styles.productWnQ}>{measure}:</Text>
+                <Text style={styles.productWnQvalue}>
+                  {value} {unit}
+                </Text>
               </View>
               <View style={styles.productWnQRow}>
                 <Text style={styles.productWnQ}>Quantity:</Text>

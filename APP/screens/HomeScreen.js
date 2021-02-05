@@ -8,46 +8,71 @@ import {
   StyleSheet,
   TouchableOpacity,
   Image,
+  FlatList,
+  StatusBar,
+  Button,
 } from 'react-native';
 import config from '../assets/config';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import TopBar from '../commonComponents/TopBar';
+import {useContext} from 'react';
+import {AuthContext} from '../navigation/AuthProvider';
 
-export default function Home() {
+export default function Home({navigation}) {
+  const {user, logout} = useContext(AuthContext);
   const [products, setProducts] = useState([
     {
-      id: 'P1',
+      key: 'P1',
       title: 'Product1',
       price: 5.0,
+      measure: 'Weight',
+      unit: 'g',
+      value: '500',
       rate: 4.9,
       img: require('../imgs/productImgs/P1.png'),
+      description:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius laudantium maxime, architecto dolorem saepe rerum, magni assumenda suscipit dolore consequuntur dolorum doloremque praesentium, porro qui.',
     },
     {
-      id: 'P2',
+      key: 'P2',
       title: 'Product2',
       price: 4.0,
+      measure: 'Weight',
+      unit: 'g',
+      value: '500',
       rate: 4.9,
       img: require('../imgs/productImgs/P2.png'),
+      description:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius laudantium maxime, architecto dolorem saepe rerum, magni assumenda suscipit dolore consequuntur dolorum doloremque praesentium, porro qui.',
     },
     {
-      id: 'P3',
+      key: 'P3',
       title: 'Product3',
       price: 4.0,
+      measure: 'Weight',
+      unit: 'g',
+      value: '500',
       rate: 4.9,
       img: require('../imgs/productImgs/P3.png'),
+      description:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius laudantium maxime, architecto dolorem saepe rerum, magni assumenda suscipit dolore consequuntur dolorum doloremque praesentium, porro qui.',
     },
     {
-      id: 'P4',
+      key: 'P4',
       title: 'Product4',
       price: 4.0,
+      measure: 'Weight',
+      unit: 'g',
+      value: '500',
       rate: 4.9,
       img: require('../imgs/productImgs/P4.png'),
+      description:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius laudantium maxime, architecto dolorem saepe rerum, magni assumenda suscipit dolore consequuntur dolorum doloremque praesentium, porro qui.',
     },
   ]);
 
   return (
     <SafeAreaView style={styles.homeScreen}>
-      <TopBar />
+      <StatusBar backgroundColor={config.P1} barStyle="dark-content" />
       <View style={styles.searchBar}>
         <TextInput
           style={styles.searchBarTxt}
@@ -156,11 +181,36 @@ export default function Home() {
         <View style={styles.allProducts}>
           <Text style={styles.hotProductsContainerTitle}>All PRODUCTS</Text>
           <View style={styles.allProductsList}>
+            {/* <FlatList
+              data={products}
+              renderItem={({item}) => (
+                <TouchableOpacity
+                  key={item.key}
+                  style={styles.allProductItem}
+                  onPress={() => navigation.navigate('ProductDetails', item)}>
+                  <View style={styles.hotProductImgContainer}>
+                    <Image source={item.img} style={styles.hotProductImg} />
+                  </View>
+                  <Text style={styles.hotProductTitle}>{item.title}</Text>
+                  <View style={styles.hotProductPriceNRate}>
+                    <Text style={styles.hotProductPrice}>$ {item.price}</Text>
+                    <Text style={styles.hotProductRate}>
+                      <FontAwesome5
+                        name={'star'}
+                        style={styles.hotProductRateIcon}
+                      />{' '}
+                      {item.rate}
+                    </Text>
+                  </View>
+                </TouchableOpacity>
+              )}
+            /> */}
+
             {products.map((product) => (
               <TouchableOpacity
-                key={product.id}
+                key={product.key}
                 style={styles.allProductItem}
-                onPress={() => console.log('product')}>
+                onPress={() => navigation.navigate('ProductDetails', product)}>
                 <View style={styles.hotProductImgContainer}>
                   <Image source={product.img} style={styles.hotProductImg} />
                 </View>
@@ -297,22 +347,23 @@ const styles = StyleSheet.create({
     margin: 5,
     width: 130,
     height: 130,
+    borderRadius: config.BR,
   },
 
   hotProductTitle: {
     color: config.P2,
     fontSize: 13,
     fontWeight: 'bold',
-    marginLeft: 2,
-    marginRight: 2,
+    marginLeft: 4,
+    marginRight: 4,
   },
 
   hotProductPriceNRate: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginBottom: 3,
-    marginLeft: 2,
-    marginRight: 2,
+    marginLeft: 14,
+    marginRight: 10,
   },
 
   hotProductPrice: {
