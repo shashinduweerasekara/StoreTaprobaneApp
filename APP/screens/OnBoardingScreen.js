@@ -23,7 +23,6 @@ const OnBoardingScreen = ({navigation}) => {
           duraton="1500"
           source={require('../assets/logo.png')}
           style={styles.logo}
-          resizeMode="stretch"
         />
       </View>
       <Animatable.View
@@ -61,8 +60,8 @@ const OnBoardingScreen = ({navigation}) => {
 
 export default OnBoardingScreen;
 
-const {height} = Dimensions.get('screen');
-const height_logo = height * 0.28;
+const {height, width} = Dimensions.get('screen');
+const height_logo = height * 0.35;
 
 const styles = StyleSheet.create({
   container: {
@@ -84,8 +83,8 @@ const styles = StyleSheet.create({
   },
   logo: {
     resizeMode: 'contain',
-    width: height_logo,
     height: height_logo,
+    width: height_logo,
   },
   title: {
     color: config.P2,

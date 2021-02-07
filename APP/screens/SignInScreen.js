@@ -8,6 +8,7 @@ import {
   StyleSheet,
   StatusBar,
   Alert,
+  Button,
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import config from '../assets/config';
@@ -15,6 +16,7 @@ import FormInput from '../components/FormInput';
 import FormPrimaryBtn from '../components/FormPrimaryBtn';
 import GoogleBtn from '../components/GoogleBtn';
 import {AuthContext} from '../navigation/AuthProvider';
+import Feather from 'react-native-vector-icons/Feather';
 
 const SignInScreen = ({navigation}) => {
   const [email, setEmail] = useState();
@@ -64,18 +66,26 @@ const SignInScreen = ({navigation}) => {
           ]}>
           Password
         </Text>
-        <FormInput
-          labelValue={password}
-          onChangeText={(userPassword) => setPassword(userPassword)}
-          placeholderText="Your Password"
-          iconType="lock-outline"
-          secureTextEntry={true}
-        />
-        <TouchableOpacity>
-          <Text style={{color: config.P2, marginTop: 15}}>
-            Forgot password?
-          </Text>
-        </TouchableOpacity>
+        <View>
+          <FormInput
+            labelValue={password}
+            onChangeText={(userPassword) => setPassword(userPassword)}
+            placeholderText="Your Password"
+            iconType="lock-outline"
+            eyeoff="eye-off"
+            eye="eye"
+          />
+        </View>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <TouchableOpacity>
+            <Text style={{color: config.P2, marginTop: 15}}>
+              Forgot password?
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('AppBottomTab')}>
+            <Text style={{color: config.P1, marginTop: 15}}>Sign In Later</Text>
+          </TouchableOpacity>
+        </View>
         <View style={styles.button}>
           <FormPrimaryBtn
             btnTitle="Sign In"

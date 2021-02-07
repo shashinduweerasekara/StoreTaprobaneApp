@@ -7,8 +7,17 @@ const ProfileScreen = ({navigation}) => {
   const {user, logout} = useContext(AuthContext);
   return (
     <View style={styles.container}>
-      <Text>User ID: {user.uid}</Text>
-      <Button title="LOG OUT" onPress={() => logout()} />
+      {user ? (
+        <View>
+          <Text>User Email:{user.email}</Text>
+          <Button title="Sign Out" onPress={() => logout()} />
+        </View>
+      ) : (
+        <Button
+          title="Sign in"
+          onPress={() => navigation.navigate('SignInScreen')}
+        />
+      )}
     </View>
   );
 };

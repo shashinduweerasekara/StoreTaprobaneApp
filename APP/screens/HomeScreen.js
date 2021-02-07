@@ -14,11 +14,8 @@ import {
 } from 'react-native';
 import config from '../assets/config';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import {useContext} from 'react';
-import {AuthContext} from '../navigation/AuthProvider';
 
 export default function Home({navigation}) {
-  const {user, logout} = useContext(AuthContext);
   const [products, setProducts] = useState([
     {
       key: 'P1',
@@ -210,7 +207,9 @@ export default function Home({navigation}) {
               <TouchableOpacity
                 key={product.key}
                 style={styles.allProductItem}
-                onPress={() => navigation.navigate('ProductDetails', product)}>
+                onPress={() =>
+                  navigation.push('ProductDetailsScreen', product)
+                }>
                 <View style={styles.hotProductImgContainer}>
                   <Image source={product.img} style={styles.hotProductImg} />
                 </View>
@@ -251,20 +250,22 @@ const styles = StyleSheet.create({
     paddingRight: 10,
     borderTopLeftRadius: config.BR,
     borderTopRightRadius: config.BR,
-    borderWidth: 2,
+    /* borderWidth: 2,
     borderBottomWidth: 1,
-    borderColor: config.P2,
+    borderColor: config.P2, */
   },
 
   searchBarTxt: {
     fontSize: 16,
     color: config.P2,
     padding: 0,
+    marginLeft: 10,
   },
 
   searchBarIcon: {
     fontSize: 21,
     color: config.P2,
+    marginRight: 10,
   },
 
   homeContainer: {

@@ -57,7 +57,8 @@ const SignUpScreen = ({navigation}) => {
             onChangeText={(userPassword) => setPassword(userPassword)}
             placeholderText="Your Password"
             iconType="lock-outline"
-            secureTextEntry={true}
+            eyeoff="eye-off"
+            eye="eye"
           />
 
           <Text
@@ -74,9 +75,10 @@ const SignUpScreen = ({navigation}) => {
             onChangeText={(userConfirmPassword) =>
               setConfirmPassword(userConfirmPassword)
             }
-            placeholderText="Your Password"
+            placeholderText="Confirm Your Password"
             iconType="lock-outline"
-            secureTextEntry={true}
+            eyeoff="eye-off"
+            eye="eye"
           />
           <View style={styles.textPrivate}>
             <Text style={styles.color_textPrivate}>

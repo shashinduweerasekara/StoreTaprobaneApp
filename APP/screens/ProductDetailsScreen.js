@@ -12,7 +12,7 @@ import {
 import config from '../assets/config';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-export default function ProductDetails({route, navigation}) {
+export default function ProductDetailsScreen({route, navigation}) {
   const {title, price, img, measure, unit, value, description} = route.params;
   return (
     <SafeAreaView style={styles.productViewScreen}>
@@ -52,7 +52,7 @@ export default function ProductDetails({route, navigation}) {
           <View style={styles.mainBtns}>
             <TouchableOpacity
               style={styles.addCartBtn}
-              onPress={() => console.log('Add Cart')}>
+              onPress={() => navigation.navigate('CartScreen', Products)}>
               <Text style={styles.btnText}>Add to cart</Text>
             </TouchableOpacity>
             <TouchableOpacity
