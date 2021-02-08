@@ -16,7 +16,6 @@ import FormInput from '../components/FormInput';
 import FormPrimaryBtn from '../components/FormPrimaryBtn';
 import GoogleBtn from '../components/GoogleBtn';
 import {AuthContext} from '../navigation/AuthProvider';
-import Feather from 'react-native-vector-icons/Feather';
 
 const SignInScreen = ({navigation}) => {
   const [email, setEmail] = useState();

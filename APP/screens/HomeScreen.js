@@ -41,30 +41,6 @@ export default function Home({navigation}) {
       description:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius laudantium maxime, architecto dolorem saepe rerum, magni assumenda suscipit dolore consequuntur dolorum doloremque praesentium, porro qui.',
     },
-    {
-      key: 'P3',
-      title: 'Product3',
-      price: 4.0,
-      measure: 'Weight',
-      unit: 'g',
-      value: '500',
-      rate: 4.9,
-      img: require('../imgs/productImgs/P3.png'),
-      description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius laudantium maxime, architecto dolorem saepe rerum, magni assumenda suscipit dolore consequuntur dolorum doloremque praesentium, porro qui.',
-    },
-    {
-      key: 'P4',
-      title: 'Product4',
-      price: 4.0,
-      measure: 'Weight',
-      unit: 'g',
-      value: '500',
-      rate: 4.9,
-      img: require('../imgs/productImgs/P4.png'),
-      description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius laudantium maxime, architecto dolorem saepe rerum, magni assumenda suscipit dolore consequuntur dolorum doloremque praesentium, porro qui.',
-    },
   ]);
 
   return (

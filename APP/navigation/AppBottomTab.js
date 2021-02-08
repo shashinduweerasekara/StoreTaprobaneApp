@@ -11,7 +11,6 @@ import WishlistScreen from '../screens/WishlistScreen';
 import CartScreen from '../screens/CartScreen';
 import NotificationsScreen from '../screens/NotificationsScreen';
 import ProfileScreen from '../screens/ProfileScreen';
-import HomeScreen from '../screens/HomeScreen';
 
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();

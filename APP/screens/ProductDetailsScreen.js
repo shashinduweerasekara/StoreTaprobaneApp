@@ -40,11 +40,11 @@ export default function ProductDetailsScreen({route, navigation}) {
               <View style={styles.productWnQRow}>
                 <Text style={styles.productWnQ}>Quantity:</Text>
                 <TouchableOpacity style={styles.productQIconContainer}>
-                  <FontAwesome5 name={'plus'} style={styles.productQIcon} />
+                  <FontAwesome5 name={'minus'} style={styles.productQIcon} />
                 </TouchableOpacity>
                 <Text style={styles.productWnQvalue}>01</Text>
                 <TouchableOpacity style={styles.productQIconContainer}>
-                  <FontAwesome5 name={'minus'} style={styles.productQIcon} />
+                  <FontAwesome5 name={'plus'} style={styles.productQIcon} />
                 </TouchableOpacity>
               </View>
             </View>
@@ -52,7 +52,7 @@ export default function ProductDetailsScreen({route, navigation}) {
           <View style={styles.mainBtns}>
             <TouchableOpacity
               style={styles.addCartBtn}
-              onPress={() => navigation.navigate('CartScreen', Products)}>
+              onPress={() => navigation.navigate('CartScreen')}>
               <Text style={styles.btnText}>Add to cart</Text>
             </TouchableOpacity>
             <TouchableOpacity
