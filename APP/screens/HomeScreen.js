@@ -13,7 +13,9 @@ import {
   Button,
 } from 'react-native';
 import config from '../assets/config';
+import Slider from '../components/Slider';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import HotProducts from '../components/HotProducts';
 
 export default function Home({navigation}) {
   const [products, setProducts] = useState([
@@ -41,6 +43,78 @@ export default function Home({navigation}) {
       description:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius laudantium maxime, architecto dolorem saepe rerum, magni assumenda suscipit dolore consequuntur dolorum doloremque praesentium, porro qui.',
     },
+    {
+      key: 'P3',
+      title: 'Product3',
+      price: 4.0,
+      measure: 'Weight',
+      unit: 'g',
+      value: '500',
+      rate: 4.9,
+      img: require('../imgs/productImgs/P3.png'),
+      description:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius laudantium maxime, architecto dolorem saepe rerum, magni assumenda suscipit dolore consequuntur dolorum doloremque praesentium, porro qui.',
+    },
+    {
+      key: 'P4',
+      title: 'Product4',
+      price: 4.0,
+      measure: 'Weight',
+      unit: 'g',
+      value: '500',
+      rate: 4.9,
+      img: require('../imgs/productImgs/P4.png'),
+      description:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius laudantium maxime, architecto dolorem saepe rerum, magni assumenda suscipit dolore consequuntur dolorum doloremque praesentium, porro qui.',
+    },
+    {
+      key: 'P5',
+      title: 'Product5',
+      price: 5.0,
+      measure: 'Weight',
+      unit: 'g',
+      value: '500',
+      rate: 4.9,
+      img: require('../imgs/productImgs/P5.png'),
+      description:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius laudantium maxime, architecto dolorem saepe rerum, magni assumenda suscipit dolore consequuntur dolorum doloremque praesentium, porro qui.',
+    },
+    {
+      key: 'P6',
+      title: 'Product6',
+      price: 4.0,
+      measure: 'Weight',
+      unit: 'g',
+      value: '500',
+      rate: 4.9,
+      img: require('../imgs/productImgs/P6.png'),
+      description:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius laudantium maxime, architecto dolorem saepe rerum, magni assumenda suscipit dolore consequuntur dolorum doloremque praesentium, porro qui.',
+    },
+    {
+      key: 'P7',
+      title: 'Product7',
+      price: 4.0,
+      measure: 'Weight',
+      unit: 'g',
+      value: '500',
+      rate: 4.9,
+      img: require('../imgs/productImgs/P7.png'),
+      description:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius laudantium maxime, architecto dolorem saepe rerum, magni assumenda suscipit dolore consequuntur dolorum doloremque praesentium, porro qui.',
+    },
+    {
+      key: 'P8',
+      title: 'Product8',
+      price: 4.0,
+      measure: 'Weight',
+      unit: 'g',
+      value: '500',
+      rate: 4.9,
+      img: require('../imgs/productImgs/P8.png'),
+      description:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius laudantium maxime, architecto dolorem saepe rerum, magni assumenda suscipit dolore consequuntur dolorum doloremque praesentium, porro qui.',
+    },
   ]);
 
   return (
@@ -55,7 +129,7 @@ export default function Home({navigation}) {
         </TouchableOpacity>
       </View>
       <ScrollView style={styles.homeContainer}>
-        <View style={{height: 160, backgroundColor: config.S2}}></View>
+        <Slider />
         <View style={styles.categories}>
           <Text style={styles.categoriesContainerTitle}>OUR CATEGORIES</Text>
           <View style={styles.categoriesContainer}>
@@ -91,7 +165,8 @@ export default function Home({navigation}) {
         </View>
         <View style={styles.hotProducts}>
           <Text style={styles.hotProductsContainerTitle}>HOT PRODUCTS</Text>
-          <View style={styles.hotProductsList}>
+          <HotProducts />
+          {/* <View style={styles.hotProductsList}>
             <TouchableOpacity style={styles.hotProductItem}>
               <View style={styles.hotProductImgContainer}>
                 <Image
@@ -111,45 +186,7 @@ export default function Home({navigation}) {
                 </Text>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.hotProductItem}>
-              <View style={styles.hotProductImgContainer}>
-                <Image
-                  source={require('../imgs/productImgs/P2.png')}
-                  style={styles.hotProductImg}
-                />
-              </View>
-              <Text style={styles.hotProductTitle}>Black Pepper Powder</Text>
-              <View style={styles.hotProductPriceNRate}>
-                <Text style={styles.hotProductPrice}>$ 4.00</Text>
-                <Text style={styles.hotProductRate}>
-                  <FontAwesome5
-                    name={'star'}
-                    style={styles.hotProductRateIcon}
-                  />{' '}
-                  4.9
-                </Text>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.hotProductItem}>
-              <View style={styles.hotProductImgContainer}>
-                <Image
-                  source={require('../imgs/productImgs/P3.png')}
-                  style={styles.hotProductImg}
-                />
-              </View>
-              <Text style={styles.hotProductTitle}>Black Pepper Powder</Text>
-              <View style={styles.hotProductPriceNRate}>
-                <Text style={styles.hotProductPrice}>$ 4.00</Text>
-                <Text style={styles.hotProductRate}>
-                  <FontAwesome5
-                    name={'star'}
-                    style={styles.hotProductRateIcon}
-                  />{' '}
-                  4.9
-                </Text>
-              </View>
-            </TouchableOpacity>
-          </View>
+          </View> */}
         </View>
         <View style={styles.allProducts}>
           <Text style={styles.hotProductsContainerTitle}>All PRODUCTS</Text>
@@ -184,7 +221,7 @@ export default function Home({navigation}) {
                 key={product.key}
                 style={styles.allProductItem}
                 onPress={() =>
-                  navigation.push('ProductDetailsScreen', product)
+                  navigation.navigate('ProductDetailsScreen', product)
                 }>
                 <View style={styles.hotProductImgContainer}>
                   <Image source={product.img} style={styles.hotProductImg} />

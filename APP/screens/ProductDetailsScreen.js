@@ -52,7 +52,8 @@ export default function ProductDetailsScreen({route, navigation}) {
           <View style={styles.mainBtns}>
             <TouchableOpacity
               style={styles.addCartBtn}
-              onPress={() => navigation.navigate('CartScreen')}>
+              /* onPress={() => navigation.navigate('CartScreen')} */
+            >
               <Text style={styles.btnText}>Add to cart</Text>
             </TouchableOpacity>
             <TouchableOpacity

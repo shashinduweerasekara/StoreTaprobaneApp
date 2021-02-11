@@ -8,7 +8,7 @@ export default function Cart({navigation}) {
     <View style={styles.cartContainer}>
       <View style={styles.cartContent}>
         <View style={styles.cartContentHeader}>
-          <Text style={styles.cartItemCount}>Cart (4)</Text>
+          <Text style={styles.cartItemCount}>Cart (2)</Text>
           <TouchableOpacity style={styles.checkOutbtn}>
             <Text style={styles.checkOuttxt}>Check Out</Text>
           </TouchableOpacity>
@@ -23,8 +23,8 @@ export default function Cart({navigation}) {
             </View>
             <View style={styles.cartItemRight}>
               <View style={styles.cartItemRightTop}>
-                <Text style={styles.cartItemName}>Product 1</Text>
-                <Text style={styles.cartItemPrice}>$ 4.00</Text>
+                <Text style={styles.cartItemName}>Product1</Text>
+                <Text style={styles.cartItemPrice}>$ 5.00</Text>
               </View>
               <View style={styles.cartItemRightBottom}>
                 <TouchableOpacity>
@@ -39,7 +39,7 @@ export default function Cart({navigation}) {
                       />
                     </TouchableOpacity>
                   </View>
-                  <Text style={styles.productQty}>4</Text>
+                  <Text style={styles.productQty}>1</Text>
                   <View style={styles.productQIconContainer}>
                     <TouchableOpacity>
                       <FontAwesome5 name={'plus'} style={styles.productQIcon} />
@@ -58,7 +58,7 @@ export default function Cart({navigation}) {
             </View>
             <View style={styles.cartItemRight}>
               <View style={styles.cartItemRightTop}>
-                <Text style={styles.cartItemName}>Product 2</Text>
+                <Text style={styles.cartItemName}>Product2</Text>
                 <Text style={styles.cartItemPrice}>$ 4.00</Text>
               </View>
               <View style={styles.cartItemRightBottom}>
