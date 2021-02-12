@@ -7,7 +7,7 @@ import {GoogleSignin} from '@react-native-community/google-signin';
 import OnBoardingScreen from '../screens/OnBoardingScreen';
 import SignInScreen from '../screens/SignInScreen';
 import SignUpScreen from '../screens/SignUpScreen';
-import AppBottomTab from './AppBottomTab';
+import AppDrawer from './AppDrawer';
 
 const Stack = createStackNavigator();
 
@@ -57,8 +57,8 @@ export default function AuthStack() {
         options={{header: () => null}}
       />
       <Stack.Screen
-        name="AppBottomTab"
-        component={AppBottomTab}
+        name="AppDrawer"
+        component={AppDrawer}
         options={{header: () => null}}
       />
     </Stack.Navigator>

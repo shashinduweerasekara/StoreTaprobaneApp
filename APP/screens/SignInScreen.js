@@ -81,7 +81,7 @@ const SignInScreen = ({navigation}) => {
               Forgot password?
             </Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('AppBottomTab')}>
+          <TouchableOpacity onPress={() => navigation.navigate('AppDrawer')}>
             <Text style={{color: config.P1, marginTop: 15}}>Sign In Later</Text>
           </TouchableOpacity>
         </View>

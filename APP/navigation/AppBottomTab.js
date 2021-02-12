@@ -24,7 +24,6 @@ export default function AppBottomTab({navigation}) {
         backgroundColor: config.P1,
         margin: 0,
         padding: 0,
-        borderRadius: config.BR,
       }}>
       <Tab.Screen
         name="HomeScreen"

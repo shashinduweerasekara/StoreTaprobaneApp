@@ -1,20 +1,28 @@
 import React from 'react';
+import {TouchableWithoutFeedback} from 'react-native';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 import {createStackNavigator} from '@react-navigation/stack';
-import HomeScreen from '../screens/HomeScreen';
-import ProductDetailsScreen from '../screens/ProductDetailsScreen';
-import ProfileScreen from '../screens/ProfileScreen';
-import CartScreen from '../screens/CartScreen';
-import OffersScreen from '../screens/OffersScreen';
-import WishlistScreen from '../screens/WishlistScreen';
+import AppBottomTab from './AppBottomTab';
 import ContactUsScreen from '../screens/ContactUsScreen';
+import FAQScreen from '../screens/FAQScreen';
 import config from '../assets/config';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Icon from '../assets/Icon';
-import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 
+const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 
-export default function AppStack({navigation}) {
+export default function AppDrawer() {
+  return (
+    <Drawer.Navigator>
+      <Drawer.Screen name="Home" component={AppBottomTab} />
+      <Drawer.Screen name="Contact Us" component={ContactUsStack} />
+      <Drawer.Screen name="FAQ" component={FAQScreen} />
+    </Drawer.Navigator>
+  );
+}
+
+function ContactUsStack({navigation}) {
   return (
     <Stack.Navigator
       initialRouteName="HomeScreen"
@@ -48,36 +56,6 @@ export default function AppStack({navigation}) {
           </TouchableWithoutFeedback>
         ),
       }}>
-      <Stack.Screen
-        name="HomeScreen"
-        component={HomeScreen}
-        options={{headerTitle: (props) => <Icon {...props} />}}
-      />
-      <Stack.Screen
-        name="ProductDetailsScreen"
-        component={ProductDetailsScreen}
-        options={{headerTitle: (props) => <Icon {...props} />}}
-      />
-      <Stack.Screen
-        name="ProfileScreen"
-        component={ProfileScreen}
-        options={{headerTitle: (props) => <Icon {...props} />}}
-      />
-      <Stack.Screen
-        name="CartScreen"
-        component={CartScreen}
-        options={{headerTitle: (props) => <Icon {...props} />}}
-      />
-      <Stack.Screen
-        name="OffersScreen"
-        component={OffersScreen}
-        options={{headerTitle: (props) => <Icon {...props} />}}
-      />
-      <Stack.Screen
-        name="WishlistScreen"
-        component={WishlistScreen}
-        options={{headerTitle: (props) => <Icon {...props} />}}
-      />
       <Stack.Screen
         name="ContactUsScreen"
         component={ContactUsScreen}
